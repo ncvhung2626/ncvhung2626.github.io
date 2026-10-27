@@ -36,7 +36,7 @@
       display: grid; width: 126px; height: 126px; place-items: end center; margin: 0 auto 1.1rem; overflow: hidden;
       border: 1px solid rgba(21, 216, 163, .25); border-radius: 20px; background: radial-gradient(circle at 50% 20%, #39465a, #22242c 72%);
     }
-    .avatar img { width: 128%; margin-bottom: -5px; }
+    .avatar img { width: 100%; height: 100%; margin: 0; object-fit: cover; object-position: center 22%; }
     .sidebar h1 { margin: 0; font-size: 1.35rem; line-height: 1.2; letter-spacing: -.04em; }
     .role { display: inline-block; margin: .8rem 0 1.35rem; padding: .32rem .66rem; border-radius: 8px; color: #d9fff5; background: var(--accent-soft); font-size: .75rem; font-weight: 750; }
     .sidebar-divider { height: 1px; margin: 0 -1.8rem 1.35rem; background: var(--line); }
@@ -127,54 +127,56 @@
   <div class="shell">
     <aside class="sidebar card">
       <div class="avatar"><img src="assets/nguyen-hung.png" alt="Nguyễn Cao Vạn Hưng"></div>
-      <div><h1>Nguyễn Cao Vạn Hưng</h1><span class="role">Intern Software Engineering</span></div>
+      <div><h1>Nguyễn Cao Vạn Hưng</h1><span class="role">Sinh viên Kỹ thuật phần mềm</span></div>
       <div class="sidebar-divider"></div>
       <div class="contacts">
         <div class="contact-row"><span class="contact-icon">✉</span><div><span class="contact-label">Email</span><a class="contact-value" href="mailto:ncvhung2626@gmail.com">ncvhung2626@gmail.com</a></div></div>
         <div class="contact-row"><span class="contact-icon">⌘</span><div><span class="contact-label">GitHub</span><a class="contact-value" href="https://github.com/ncvhung2626" target="_blank" rel="noreferrer">github.com/ncvhung2626</a></div></div>
-        <div class="contact-row"><span class="contact-icon">⌖</span><div><span class="contact-label">Location</span><span class="contact-value">Ho Chi Minh City, Vietnam</span></div></div>
-        <div class="contact-row"><span class="contact-icon">▣</span><div><span class="contact-label">Education</span><span class="contact-value">Vietnam Aviation Academy</span></div></div>
+        <div class="contact-row"><span class="contact-icon">⌖</span><div><span class="contact-label">Địa điểm</span><span class="contact-value">TP. Hồ Chí Minh, Việt Nam</span></div></div>
+        <div class="contact-row"><span class="contact-icon">▣</span><div><span class="contact-label">Học vấn</span><span class="contact-value">Vietnam Aviation Academy</span></div></div>
       </div>
       <div class="sidebar-actions"><a class="button button-primary" href="assets/nguyen-cao-van-hung-cv.pdf" target="_blank" rel="noreferrer">Xem CV PDF ↗</a><a class="button" href="mailto:ncvhung2626@gmail.com">Liên hệ</a></div>
     </aside>
 
     <main class="content card">
-      <div class="topbar"><nav class="nav" aria-label="Điều hướng portfolio"><a href="#about">About</a><a href="#resume">Resume</a><a href="#projects">Projects</a><a href="#cv">CV</a><a href="#contact">Contact</a></nav></div>
+      <div class="topbar"><nav class="nav" aria-label="Điều hướng portfolio"><a href="#about">Giới thiệu</a><a href="#resume">Kỹ năng</a><a href="#projects">Dự án</a><a href="#cv">CV</a><a href="#contact">Liên hệ</a></nav></div>
       <div class="page">
         <section class="section" id="about">
-          <h2 class="section-title">About me</h2>
-          <p class="about-copy">Tôi là Nguyễn Cao Vạn Hưng, sinh viên năm cuối Software Engineering tại Vietnam Aviation Academy. Tôi có nền tảng Node.js và thích xây dựng sản phẩm web full-stack, nơi giao diện, API và dữ liệu được kết nối thành một trải nghiệm rõ ràng.</p>
-          <p class="about-copy">Từ marketplace đến hệ thống quản lý sinh viên, tôi tập trung vào tính ứng dụng thực tế: phân quyền theo vai trò, giao tiếp realtime, quản lý dữ liệu quan hệ và các luồng nghiệp vụ như điểm danh hoặc thanh toán.</p>
+          <h2 class="section-title">Về mình</h2>
+          <p class="about-copy">Chào bạn, mình là Nguyễn Cao Vạn Hưng — sinh viên năm cuối Software Engineering tại Vietnam Aviation Academy. Mình thích xây dựng sản phẩm web full-stack, nơi giao diện, API và dữ liệu cùng tạo nên một trải nghiệm dễ dùng.</p>
+          <p class="about-copy">Mình đặc biệt quan tâm đến những bài toán có tính ứng dụng: phân quyền theo vai trò, trao đổi dữ liệu realtime, quản lý cơ sở dữ liệu và các quy trình như điểm danh, thanh toán hay đặt món.</p>
           <div class="service-grid">
-            <article class="service"><span class="service-icon">⌘</span><h3>Backend Development</h3><p>Thiết kế REST API với Node.js, Express, NestJS, TypeScript và JWT.</p></article>
-            <article class="service"><span class="service-icon">◫</span><h3>Full-stack Web</h3><p>Xây dựng giao diện responsive bằng React, HTML, CSS và Bootstrap.</p></article>
-            <article class="service"><span class="service-icon">◌</span><h3>Data &amp; Realtime</h3><p>Mô hình hóa dữ liệu với PostgreSQL/MongoDB và giao tiếp Socket.io.</p></article>
+            <article class="service"><span class="service-icon">⌘</span><h3>Phát triển Backend</h3><p>Thiết kế REST API với Node.js, Express, NestJS, TypeScript và JWT.</p></article>
+            <article class="service"><span class="service-icon">◫</span><h3>Web Full-stack</h3><p>Xây dựng giao diện responsive bằng React, HTML, CSS và Bootstrap.</p></article>
+            <article class="service"><span class="service-icon">◌</span><h3>Dữ liệu &amp; Realtime</h3><p>Mô hình hóa dữ liệu với PostgreSQL/MongoDB và giao tiếp Socket.io.</p></article>
           </div>
         </section>
 
         <section class="section" id="resume">
-          <h2 class="section-title">Resume</h2>
+          <h2 class="section-title">Kỹ năng &amp; hành trình</h2>
           <div class="resume-grid">
-            <div><h3 class="subheading"><span>▣</span>Education</h3><div class="timeline"><article class="timeline-item"><h3>Software Engineering</h3><time>2024 — Present</time><p>Vietnam Aviation Academy · Sinh viên năm cuối, định hướng phát triển phần mềm full-stack.</p></article></div></div>
-            <div><h3 class="subheading"><span>⌘</span>Core skills</h3><div class="skill-list"><div class="skill"><b>BACKEND</b><span>Node.js, Express.js, NestJS, TypeScript, REST APIs, JWT.</span></div><div class="skill"><b>FRONTEND</b><span>React, JavaScript, HTML, CSS, Bootstrap, Tailwind CSS, EJS.</span></div><div class="skill"><b>DATA &amp; TOOLS</b><span>PostgreSQL, MongoDB, TypeORM, Socket.io, Git/GitHub, Postman.</span></div></div></div>
+            <div><h3 class="subheading"><span>▣</span>Học vấn</h3><div class="timeline"><article class="timeline-item"><h3>Kỹ thuật phần mềm</h3><time>2024 — nay</time><p>Vietnam Aviation Academy · Sinh viên năm cuối, theo đuổi hướng phát triển sản phẩm full-stack.</p></article></div></div>
+            <div><h3 class="subheading"><span>⌘</span>Kỹ năng chính</h3><div class="skill-list"><div class="skill"><b>BACKEND</b><span>Node.js, Express.js, NestJS, TypeScript, REST APIs, JWT.</span></div><div class="skill"><b>FRONTEND</b><span>React, React Native, JavaScript, HTML, CSS, Bootstrap, Tailwind CSS.</span></div><div class="skill"><b>DATA &amp; TOOLS</b><span>PostgreSQL, MongoDB, Supabase, TypeORM, Socket.io, Git/GitHub.</span></div></div></div>
           </div>
           <div class="stack-showcase">
             <figure><img src="assets/tech-stack-3d.png" alt="Bàn phím 3D minh họa React, JavaScript, Node.js, NestJS, TypeScript, PostgreSQL, MongoDB, Socket.io, Git, HTML và CSS" loading="lazy"><figcaption>Tech stack được rút ra từ các dự án GitHub.</figcaption></figure>
-            <div class="stack-copy"><h3>Công nghệ tôi đã sử dụng</h3><p>Minh họa này quy tụ những công nghệ xuất hiện trực tiếp trong hai dự án HaiHand Marketplace và WebSinhVien.</p><div class="chips"><span>React</span><span>Node.js</span><span>NestJS</span><span>TypeScript</span><span>PostgreSQL</span><span>MongoDB</span><span>Socket.io</span><span>Git</span></div></div>
+            <div class="stack-copy"><h3>Công nghệ mình đã dùng</h3><p>Đây là những công nghệ mình đã sử dụng khi xây dựng các dự án trên GitHub, từ web đến mobile.</p><div class="chips"><span>React</span><span>React Native</span><span>Node.js</span><span>NestJS</span><span>TypeScript</span><span>PostgreSQL</span><span>MongoDB</span><span>Supabase</span></div></div>
           </div>
         </section>
 
         <section class="section" id="projects">
-          <h2 class="section-title">Projects</h2>
+          <h2 class="section-title">Dự án mình đã làm</h2>
           <div class="project-grid">
             <article class="project"><span class="project-type">E-commerce platform</span><h3>HaiHand Marketplace</h3><p>Marketplace có đăng bài, tìm kiếm, yêu thích, đơn hàng, quản trị nội dung và nhắn tin realtime giữa người mua và người bán.</p><div class="chips"><span>React</span><span>Express</span><span>MongoDB</span><span>Socket.io</span></div><a class="project-link" href="https://github.com/ncvhung2626/HaiHand-Marketplace" target="_blank" rel="noreferrer">Xem mã nguồn ↗</a></article>
             <article class="project"><span class="project-type">Education platform</span><h3>WebSinhVien</h3><p>Hệ thống quản lý sinh viên với đăng ký học phần, điểm danh QR, bài tập, điểm số, thanh toán và dashboard theo vai trò.</p><div class="chips"><span>NestJS</span><span>TypeScript</span><span>PostgreSQL</span><span>TypeORM</span></div><a class="project-link" href="https://github.com/ncvhung2626/WebSinhVien" target="_blank" rel="noreferrer">Xem mã nguồn ↗</a></article>
+            <article class="project"><span class="project-type">Mobile community app</span><h3>SnapChef</h3><p>Ứng dụng cộng đồng ẩm thực trên mobile, nơi người dùng có thể chia sẻ công thức, bài đăng, Reels, nhóm và kết nối với những người cùng sở thích nấu ăn.</p><div class="chips"><span>Expo</span><span>React Native</span><span>TypeScript</span><span>Supabase</span></div><a class="project-link" href="https://github.com/ncvhung2626/snapchef" target="_blank" rel="noreferrer">Xem mã nguồn ↗</a></article>
+            <article class="project"><span class="project-type">Tea shop management</span><h3>WebTiemTra</h3><p>Hệ thống quản lý quán trà sữa với thực đơn, giỏ hàng, đơn hàng, nhân viên và mã QR cho từng bàn để hỗ trợ quy trình phục vụ.</p><div class="chips"><span>PHP</span><span>MySQL</span><span>QR Code</span><span>HTML/CSS</span></div><a class="project-link" href="https://github.com/ncvhung2626/WebTiemTra" target="_blank" rel="noreferrer">Xem mã nguồn ↗</a></article>
           </div>
         </section>
 
-        <section class="section" id="cv"><div class="cv-card"><div><h3>Curriculum Vitae</h3><p>Xem chi tiết kinh nghiệm dự án, kỹ năng, học vấn và thông tin liên hệ trong CV tiếng Anh.</p></div><a class="button button-primary" href="assets/nguyen-cao-van-hung-cv.pdf" target="_blank" rel="noreferrer">Mở CV PDF ↗</a></div></section>
+        <section class="section" id="cv"><div class="cv-card"><div><h3>CV của mình</h3><p>Xem chi tiết kinh nghiệm dự án, kỹ năng, học vấn và thông tin liên hệ trong CV tiếng Anh.</p></div><a class="button button-primary" href="assets/nguyen-cao-van-hung-cv.pdf" target="_blank" rel="noreferrer">Mở CV PDF ↗</a></div></section>
 
-        <section class="section" id="contact"><h2 class="section-title">Contact</h2><div class="contact-box"><p>Sẵn sàng trao đổi về cơ hội thực tập, dự án web và những bài toán kỹ thuật thú vị.</p><a class="email" href="mailto:ncvhung2626@gmail.com">ncvhung2626@gmail.com</a><div class="buttons"><a class="button button-primary" href="mailto:ncvhung2626@gmail.com">Gửi email ↗</a><a class="button" href="assets/nguyen-cao-van-hung-cv.pdf" download>Tải CV ↓</a></div></div></section>
+        <section class="section" id="contact"><h2 class="section-title">Liên hệ với mình</h2><div class="contact-box"><p>Nếu bạn muốn trao đổi về cơ hội thực tập, một dự án web hoặc chỉ đơn giản là chia sẻ ý tưởng, hãy gửi mình một email nhé.</p><a class="email" href="mailto:ncvhung2626@gmail.com">ncvhung2626@gmail.com</a><div class="buttons"><a class="button button-primary" href="mailto:ncvhung2626@gmail.com">Gửi email ↗</a><a class="button" href="assets/nguyen-cao-van-hung-cv.pdf" download>Tải CV ↓</a></div></div></section>
         <footer>© 2026 Nguyễn Cao Vạn Hưng · Built with care.</footer>
       </div>
     </main>
