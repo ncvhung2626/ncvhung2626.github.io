@@ -100,6 +100,11 @@
     .stack-copy p { margin: 0; color: var(--muted); font-size: .88rem; }
     .chips { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: 1rem; }
     .chips span { padding: .33rem .55rem; border: 1px solid var(--line); border-radius: 999px; color: #e2e2e7; font-size: .72rem; font-weight: 700; }
+    .language-heading { margin: 1.8rem 0 .85rem; font-size: 1.02rem; }
+    .language-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: .8rem; }
+    .language-card { display: grid; grid-template-columns: 44px 1fr; gap: .75rem; align-items: center; padding: .9rem; border: 1px solid var(--line); border-radius: 13px; background: #222229; }
+    .language-code { display: grid; width: 44px; height: 44px; place-items: center; border-radius: 10px; color: var(--accent); background: var(--accent-soft); font-size: .76rem; font-weight: 900; }
+    .language-card b { display: block; font-size: .9rem; } .language-card span:last-child { display: block; margin-top: .12rem; color: var(--muted); font-size: .77rem; }
 
     .project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
     .project { display: flex; min-height: 270px; flex-direction: column; padding: 1.4rem; border: 1px solid var(--line); border-radius: 16px; background: #222229; transition: transform .2s, border-color .2s; }
@@ -166,6 +171,7 @@
             <div class="tech-playground"><p class="keyboard-hint">Bấm vào một phím để xem mình đã dùng công nghệ đó ở đâu.</p><div class="tech-keyboard" aria-label="Bàn phím công nghệ tương tác"><button class="tech-key active" type="button" data-tech="react" style="--key:#168ccc" aria-pressed="true">React</button><button class="tech-key" type="button" data-tech="native" style="--key:#7059d9" aria-pressed="false">React Native</button><button class="tech-key" type="button" data-tech="node" style="--key:#389d48" aria-pressed="false">Node.js</button><button class="tech-key" type="button" data-tech="nest" style="--key:#d03c57" aria-pressed="false">NestJS</button><button class="tech-key" type="button" data-tech="typescript" style="--key:#2772c9" aria-pressed="false">TypeScript</button><button class="tech-key" type="button" data-tech="postgres" style="--key:#3577a9" aria-pressed="false">PostgreSQL</button><button class="tech-key" type="button" data-tech="mongo" style="--key:#20a366" aria-pressed="false">MongoDB</button><button class="tech-key" type="button" data-tech="supabase" style="--key:#16896c" aria-pressed="false">Supabase</button></div></div>
             <div class="stack-copy"><h3 id="tech-title">React</h3><p id="tech-detail" aria-live="polite">Mình dùng React để xây dựng giao diện web cho HaiHand Marketplace, từ trang khám phá sản phẩm đến các luồng thao tác của người dùng.</p><div class="chips"><span>Chọn một phím để khám phá</span></div></div>
           </div>
+          <h3 class="language-heading">Ngôn ngữ</h3><div class="language-grid"><article class="language-card"><span class="language-code">EN</span><div><b>Tiếng Anh</b><span>Giao tiếp hằng ngày và công việc cơ bản</span></div></article><article class="language-card"><span class="language-code">JP</span><div><b>Tiếng Nhật</b><span>Cơ bản · từ vựng và hội thoại đơn giản</span></div></article></div>
         </section>
 
         <section class="section" id="projects">
