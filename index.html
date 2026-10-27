@@ -90,9 +90,12 @@
     .skill span { color: var(--muted); font-size: .84rem; }
 
     .stack-showcase { display: grid; grid-template-columns: .95fr 1.05fr; gap: 1.2rem; align-items: center; margin-top: 2.2rem; padding: 1.15rem; border: 1px solid var(--line); border-radius: 18px; background: #202027; }
-    .stack-showcase figure { position: relative; margin: 0; overflow: hidden; border-radius: 13px; background: radial-gradient(circle at 45% 35%, rgba(21, 216, 163, .13), transparent 46%), #16161d; }
-    .stack-showcase img { display: block; width: 100%; filter: drop-shadow(0 16px 14px rgba(0, 0, 0, .45)); }
-    .stack-showcase figcaption { padding: .2rem .75rem .75rem; color: var(--muted); font-size: .75rem; }
+    .tech-playground { position: relative; overflow: hidden; padding: 1.1rem; border: 1px solid rgba(21, 216, 163, .18); border-radius: 14px; background: radial-gradient(circle at 45% 25%, rgba(21, 216, 163, .16), transparent 46%), #15151c; }
+    .keyboard-hint { margin: 0 0 .85rem; color: var(--muted); font-size: .75rem; }
+    .tech-keyboard { display: grid; grid-template-columns: repeat(4, 1fr); gap: .6rem; padding: .9rem; border-radius: 16px; background: linear-gradient(145deg, #101015, #292932); box-shadow: inset 0 1px rgba(255,255,255,.08), 0 16px 24px rgba(0,0,0,.35); perspective: 600px; transform: rotateX(12deg) rotateZ(-2deg); }
+    .tech-key { min-height: 58px; border: 1px solid color-mix(in srgb, var(--key) 65%, white); border-radius: 10px; color: white; background: linear-gradient(145deg, color-mix(in srgb, var(--key) 94%, white), var(--key)); box-shadow: inset 0 2px rgba(255,255,255,.34), inset 0 -5px rgba(0,0,0,.22), 0 7px 0 color-mix(in srgb, var(--key) 45%, black), 0 12px 15px rgba(0,0,0,.3); cursor: pointer; font-size: .72rem; font-weight: 850; text-shadow: 0 1px rgba(0,0,0,.25); transition: transform .12s, box-shadow .12s, filter .12s; }
+    .tech-key:hover, .tech-key:focus-visible { filter: brightness(1.16); outline: 2px solid white; outline-offset: 3px; transform: translateY(-2px); }
+    .tech-key:active, .tech-key.active { transform: translateY(6px); box-shadow: inset 0 2px rgba(0,0,0,.24), 0 1px 0 color-mix(in srgb, var(--key) 45%, black), 0 3px 8px rgba(0,0,0,.35); }
     .stack-copy h3 { margin: 0 0 .7rem; font-size: 1.25rem; letter-spacing: -.03em; }
     .stack-copy p { margin: 0; color: var(--muted); font-size: .88rem; }
     .chips { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: 1rem; }
@@ -160,8 +163,8 @@
             <div><h3 class="subheading"><span>⌘</span>Kỹ năng chính</h3><div class="skill-list"><div class="skill"><b>BACKEND</b><span>Node.js, Express.js, NestJS, TypeScript, REST APIs, JWT.</span></div><div class="skill"><b>FRONTEND</b><span>React, React Native, JavaScript, HTML, CSS, Bootstrap, Tailwind CSS.</span></div><div class="skill"><b>DATA &amp; TOOLS</b><span>PostgreSQL, MongoDB, Supabase, TypeORM, Socket.io, Git/GitHub.</span></div></div></div>
           </div>
           <div class="stack-showcase">
-            <figure><img src="assets/tech-stack-3d.png" alt="Bàn phím 3D minh họa React, JavaScript, Node.js, NestJS, TypeScript, PostgreSQL, MongoDB, Socket.io, Git, HTML và CSS" loading="lazy"><figcaption>Tech stack được rút ra từ các dự án GitHub.</figcaption></figure>
-            <div class="stack-copy"><h3>Công nghệ mình đã dùng</h3><p>Đây là những công nghệ mình đã sử dụng khi xây dựng các dự án trên GitHub, từ web đến mobile.</p><div class="chips"><span>React</span><span>React Native</span><span>Node.js</span><span>NestJS</span><span>TypeScript</span><span>PostgreSQL</span><span>MongoDB</span><span>Supabase</span></div></div>
+            <div class="tech-playground"><p class="keyboard-hint">Bấm vào một phím để xem mình đã dùng công nghệ đó ở đâu.</p><div class="tech-keyboard" aria-label="Bàn phím công nghệ tương tác"><button class="tech-key active" type="button" data-tech="react" style="--key:#168ccc" aria-pressed="true">React</button><button class="tech-key" type="button" data-tech="native" style="--key:#7059d9" aria-pressed="false">React Native</button><button class="tech-key" type="button" data-tech="node" style="--key:#389d48" aria-pressed="false">Node.js</button><button class="tech-key" type="button" data-tech="nest" style="--key:#d03c57" aria-pressed="false">NestJS</button><button class="tech-key" type="button" data-tech="typescript" style="--key:#2772c9" aria-pressed="false">TypeScript</button><button class="tech-key" type="button" data-tech="postgres" style="--key:#3577a9" aria-pressed="false">PostgreSQL</button><button class="tech-key" type="button" data-tech="mongo" style="--key:#20a366" aria-pressed="false">MongoDB</button><button class="tech-key" type="button" data-tech="supabase" style="--key:#16896c" aria-pressed="false">Supabase</button></div></div>
+            <div class="stack-copy"><h3 id="tech-title">React</h3><p id="tech-detail" aria-live="polite">Mình dùng React để xây dựng giao diện web cho HaiHand Marketplace, từ trang khám phá sản phẩm đến các luồng thao tác của người dùng.</p><div class="chips"><span>Chọn một phím để khám phá</span></div></div>
           </div>
         </section>
 
@@ -183,5 +186,27 @@
       </div>
     </main>
   </div>
+  <script>
+    const technologies = {
+      react: ['React', 'Mình dùng React để xây dựng giao diện web cho HaiHand Marketplace, từ trang khám phá sản phẩm đến các luồng thao tác của người dùng.'],
+      native: ['React Native', 'React Native và Expo là nền tảng để mình phát triển SnapChef — ứng dụng cộng đồng ẩm thực trên mobile.'],
+      node: ['Node.js', 'Node.js giúp mình xây dựng API và xử lý các nghiệp vụ phía server cho những dự án full-stack.'],
+      nest: ['NestJS', 'NestJS được dùng trong WebSinhVien để tổ chức backend theo module, dễ mở rộng và dễ bảo trì hơn.'],
+      typescript: ['TypeScript', 'TypeScript giúp code rõ ràng hơn nhờ kiểu dữ liệu, đặc biệt trong WebSinhVien và SnapChef.'],
+      postgres: ['PostgreSQL', 'PostgreSQL phù hợp với WebSinhVien vì dữ liệu học phần, điểm số và vai trò người dùng có nhiều mối quan hệ.'],
+      mongo: ['MongoDB', 'MongoDB được dùng cho dữ liệu linh hoạt của HaiHand Marketplace, như bài đăng, người dùng và tin nhắn.'],
+      supabase: ['Supabase', 'Supabase hỗ trợ lớp dữ liệu và dịch vụ cho SnapChef trong quá trình phát triển ứng dụng mobile.']
+    };
+    const title = document.querySelector('#tech-title');
+    const detail = document.querySelector('#tech-detail');
+    document.querySelectorAll('.tech-key').forEach((key) => key.addEventListener('click', () => {
+      const [name, description] = technologies[key.dataset.tech];
+      document.querySelectorAll('.tech-key').forEach((item) => { item.classList.remove('active'); item.setAttribute('aria-pressed', 'false'); });
+      key.classList.add('active');
+      key.setAttribute('aria-pressed', 'true');
+      title.textContent = name;
+      detail.textContent = description;
+    }));
+  </script>
 </body>
 </html>
