@@ -89,18 +89,25 @@
     .skill b { display: block; margin-bottom: .3rem; color: var(--accent); font-size: .72rem; letter-spacing: .06em; }
     .skill span { color: var(--muted); font-size: .84rem; }
 
-    .stack-showcase { display: grid; grid-template-columns: .95fr 1.05fr; gap: 1.2rem; align-items: center; margin-top: 2.2rem; padding: 1.15rem; border: 1px solid var(--line); border-radius: 18px; background: #202027; }
-    .tech-playground { position: relative; overflow: hidden; border: 1px solid rgba(21, 216, 163, .18); border-radius: 14px; background: #090a0e; }
-    .keyboard-art { display: block; width: 100%; aspect-ratio: 1.14; object-fit: cover; }
-    .keyboard-hint { position: absolute; z-index: 2; right: .75rem; bottom: .7rem; margin: 0; padding: .32rem .55rem; border: 1px solid rgba(255,255,255,.18); border-radius: 999px; color: #f2f2f5; background: rgba(8,8,12,.72); font-size: .68rem; backdrop-filter: blur(8px); }
-    .key-hotspot { position: absolute; z-index: 3; width: 14%; height: 18%; border: 2px solid transparent; border-radius: 16px; background: transparent; cursor: pointer; transition: border-color .15s, box-shadow .15s, transform .15s; }
-    .key-hotspot:hover, .key-hotspot:focus-visible, .key-hotspot.active { border-color: rgba(255,255,255,.94); box-shadow: 0 0 0 3px rgba(21,216,163,.35), 0 0 22px rgba(21,216,163,.45); outline: 0; }
-    .key-hotspot:active { transform: translateY(4px) scale(.96); }
+    .stack-showcase { display: grid; grid-template-columns: .95fr 1.05fr; gap: 1.2rem; align-items: center; margin-top: 2.2rem; padding: 1.15rem; border: 1px solid var(--line); border-radius: 18px; background: linear-gradient(135deg, #24242d, #19191f); }
+    .tech-playground { position: relative; overflow: hidden; isolation: isolate; border: 1px solid rgba(21, 216, 163, .2); border-radius: 16px; background: #090a0e; box-shadow: 0 20px 35px rgba(0,0,0,.28); transform: perspective(1000px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)); transition: transform .18s ease-out, box-shadow .2s; will-change: transform; }
+    .tech-playground::before { position: absolute; z-index: 1; inset: 0; background: linear-gradient(125deg, rgba(255,255,255,.14), transparent 30%, transparent 70%, rgba(21,216,163,.14)); content: ""; pointer-events: none; }
+    .tech-playground:hover { box-shadow: 0 25px 45px rgba(0,0,0,.4), 0 0 30px rgba(21,216,163,.08); }
+    .keyboard-art { display: block; width: 100%; aspect-ratio: 1.5; object-fit: cover; }
+    .keyboard-hint { position: absolute; z-index: 2; right: .75rem; bottom: .7rem; margin: 0; padding: .32rem .58rem; border: 1px solid rgba(255,255,255,.2); border-radius: 999px; color: #f2f2f5; background: rgba(8,8,12,.76); font-size: .68rem; backdrop-filter: blur(8px); }
+    .key-hotspot { position: absolute; z-index: 3; width: 14%; height: 19%; border: 2px solid transparent; border-radius: 18px; background: transparent; cursor: pointer; transition: border-color .15s, box-shadow .15s, transform .15s; }
+    .key-hotspot:hover, .key-hotspot:focus-visible, .key-hotspot.active { border-color: rgba(255,255,255,.94); box-shadow: 0 0 0 3px rgba(21,216,163,.32), 0 0 25px rgba(21,216,163,.46); outline: 0; }
+    .key-hotspot.active { background: radial-gradient(ellipse at center, rgba(255,255,255,.11), transparent 65%); }
+    .key-hotspot:active { transform: translateY(5px) scale(.95); }
     .key-hotspot::after { position: absolute; left: 50%; bottom: calc(100% + 6px); padding: .22rem .42rem; border-radius: 5px; color: white; background: rgba(8,8,12,.88); content: attr(aria-label); font-size: .67rem; font-weight: 800; opacity: 0; pointer-events: none; transform: translateX(-50%); transition: opacity .15s; white-space: nowrap; }
     .key-hotspot:hover::after, .key-hotspot:focus-visible::after { opacity: 1; }
-    .hot-react { left: 13%; top: 21%; } .hot-node { left: 41%; top: 8%; } .hot-nest { left: 60%; top: 5%; } .hot-supabase { left: 78%; top: 20%; } .hot-typescript { left: 22%; top: 42%; } .hot-postgres { left: 39%; top: 33%; } .hot-mongo { left: 56%; top: 28%; } .hot-git { left: 26%; top: 61%; } .hot-php { left: 46%; top: 54%; } .hot-mysql { left: 64%; top: 49%; }
-    .stack-copy h3 { margin: 0 0 .7rem; font-size: 1.25rem; letter-spacing: -.03em; }
-    .stack-copy p { margin: 0; color: var(--muted); font-size: .88rem; }
+    .hot-react { left: 13%; top: 20%; } .hot-node { left: 43%; top: 9%; } .hot-nest { left: 58%; top: 3%; } .hot-supabase { left: 71%; top: 20%; } .hot-typescript { left: 18%; top: 38%; } .hot-postgres { left: 35%; top: 31%; } .hot-mongo { left: 53%; top: 25%; } .hot-git { left: 24%; top: 52%; } .hot-php { left: 40%; top: 47%; } .hot-mysql { left: 57%; top: 43%; }
+    .stack-copy { padding: .45rem .25rem; }
+    .stack-copy > span { display: inline-flex; margin-bottom: .7rem; padding: .25rem .5rem; border: 1px solid rgba(21,216,163,.28); border-radius: 999px; color: var(--accent); background: var(--accent-soft); font-size: .68rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+    .stack-copy h3 { margin: 0 0 .7rem; font-size: 1.5rem; letter-spacing: -.04em; }
+    .stack-copy p { min-height: 4.5em; margin: 0; color: var(--muted); font-size: .88rem; }
+    .tech-meta { display: flex; gap: .55rem; margin-top: 1rem; }
+    .tech-meta span { padding: .34rem .55rem; border: 1px solid var(--line); border-radius: 8px; color: #d7d7de; background: #25252d; font-size: .7rem; font-weight: 750; }
     .chips { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: 1rem; }
     .chips span { padding: .33rem .55rem; border: 1px solid var(--line); border-radius: 999px; color: #e2e2e7; font-size: .72rem; font-weight: 700; }
     .language-heading { margin: 1.8rem 0 .85rem; font-size: 1.02rem; }
@@ -132,6 +139,7 @@
     @media (max-width: 1050px) { .shell { grid-template-columns: 1fr; } .sidebar { position: relative; top: 0; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 1rem; text-align: left; } .avatar { width: 82px; height: 82px; margin: 0; } .sidebar h1 { font-size: 1.2rem; } .role { margin: .45rem 0 0; } .sidebar-divider, .contacts { display: none; } .sidebar-actions { display: flex; margin: 0; } }
     @media (max-width: 720px) { .shell { width: min(100% - 1.2rem, var(--max)); margin: .6rem auto; gap: .65rem; } .card { border-radius: 16px; } .sidebar { grid-template-columns: auto 1fr; padding: 1rem; } .sidebar-actions { grid-column: 1 / -1; } .sidebar-actions .button { flex: 1; } .topbar { justify-content: flex-start; padding: 0; } .nav { width: 100%; border-radius: 16px 16px 0 0; } .page { padding: 1.55rem; } .section { padding-bottom: 3.4rem; } .service-grid, .resume-grid, .stack-showcase, .project-grid { grid-template-columns: 1fr; } .service-grid { gap: .7rem; } .cv-card { align-items: flex-start; flex-direction: column; } }
     @media (max-width: 420px) { .page { padding: 1.2rem; } .nav a { padding: .75rem .7rem; font-size: .72rem; } .sidebar-actions { display: grid; } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }
   </style>
 </head>
 <body>
@@ -172,7 +180,7 @@
           </div>
           <div class="stack-showcase">
             <div class="tech-playground"><img class="keyboard-art" src="assets/interactive-tech-keyboard.png" alt="Bàn phím 3D với các phím công nghệ lập trình" loading="lazy"><p class="keyboard-hint">Chạm vào phím để khám phá</p><button class="key-hotspot hot-react active" type="button" data-tech="react" aria-label="React" aria-pressed="true"></button><button class="key-hotspot hot-node" type="button" data-tech="node" aria-label="Node.js" aria-pressed="false"></button><button class="key-hotspot hot-nest" type="button" data-tech="nest" aria-label="NestJS" aria-pressed="false"></button><button class="key-hotspot hot-supabase" type="button" data-tech="supabase" aria-label="Supabase" aria-pressed="false"></button><button class="key-hotspot hot-typescript" type="button" data-tech="typescript" aria-label="TypeScript" aria-pressed="false"></button><button class="key-hotspot hot-postgres" type="button" data-tech="postgres" aria-label="PostgreSQL" aria-pressed="false"></button><button class="key-hotspot hot-mongo" type="button" data-tech="mongo" aria-label="MongoDB" aria-pressed="false"></button><button class="key-hotspot hot-git" type="button" data-tech="git" aria-label="Git" aria-pressed="false"></button><button class="key-hotspot hot-php" type="button" data-tech="php" aria-label="PHP" aria-pressed="false"></button><button class="key-hotspot hot-mysql" type="button" data-tech="mysql" aria-label="MySQL" aria-pressed="false"></button></div>
-            <div class="stack-copy"><h3 id="tech-title">React</h3><p id="tech-detail" aria-live="polite">Mình dùng React để xây dựng giao diện web cho HaiHand Marketplace, từ trang khám phá sản phẩm đến các luồng thao tác của người dùng.</p><div class="chips"><span>Chọn một phím để khám phá</span></div></div>
+            <div class="stack-copy"><span>Tech playground</span><h3 id="tech-title">React</h3><p id="tech-detail" aria-live="polite">Mình dùng React để xây dựng giao diện web cho HaiHand Marketplace, từ trang khám phá sản phẩm đến các luồng thao tác của người dùng.</p><div class="tech-meta"><span id="tech-project">HaiHand Marketplace</span><span>Nhấn phím để khám phá</span></div></div>
           </div>
           <h3 class="language-heading">Ngôn ngữ</h3><div class="language-grid"><article class="language-card"><span class="language-code">EN</span><div><b>Tiếng Anh</b><span>Giao tiếp hằng ngày và công việc cơ bản</span></div></article><article class="language-card"><span class="language-code">JP</span><div><b>Tiếng Nhật</b><span>Cơ bản · từ vựng và hội thoại đơn giản</span></div></article></div>
         </section>
@@ -197,27 +205,36 @@
   </div>
   <script>
     const technologies = {
-      react: ['React', 'Mình dùng React để xây dựng giao diện web cho HaiHand Marketplace, từ trang khám phá sản phẩm đến các luồng thao tác của người dùng.'],
-      node: ['Node.js', 'Node.js giúp mình xây dựng API và xử lý các nghiệp vụ phía server cho những dự án full-stack.'],
-      nest: ['NestJS', 'NestJS được dùng trong WebSinhVien để tổ chức backend theo module, dễ mở rộng và dễ bảo trì hơn.'],
-      typescript: ['TypeScript', 'TypeScript giúp code rõ ràng hơn nhờ kiểu dữ liệu, đặc biệt trong WebSinhVien và SnapChef.'],
-      postgres: ['PostgreSQL', 'PostgreSQL phù hợp với WebSinhVien vì dữ liệu học phần, điểm số và vai trò người dùng có nhiều mối quan hệ.'],
-      mongo: ['MongoDB', 'MongoDB được dùng cho dữ liệu linh hoạt của HaiHand Marketplace, như bài đăng, người dùng và tin nhắn.'],
-      supabase: ['Supabase', 'Supabase hỗ trợ lớp dữ liệu và dịch vụ cho SnapChef trong quá trình phát triển ứng dụng mobile.'],
-      git: ['Git', 'Git và GitHub là công cụ mình dùng để quản lý phiên bản, theo dõi thay đổi và chia sẻ mã nguồn dự án.'],
-      php: ['PHP', 'PHP được dùng để xây dựng WebTiemTra, bao gồm quản lý thực đơn, đơn hàng và các chức năng cho quán trà sữa.'],
-      mysql: ['MySQL', 'MySQL lưu trữ dữ liệu món ăn, bàn, đơn hàng và nhân viên trong WebTiemTra.']
+      react: ['React', 'Mình dùng React để xây dựng giao diện web cho HaiHand Marketplace, từ trang khám phá sản phẩm đến các luồng thao tác của người dùng.', 'HaiHand Marketplace'],
+      node: ['Node.js', 'Node.js giúp mình xây dựng API và xử lý các nghiệp vụ phía server cho những dự án full-stack.', 'HaiHand Marketplace · SnapChef'],
+      nest: ['NestJS', 'NestJS được dùng trong WebSinhVien để tổ chức backend theo module, dễ mở rộng và dễ bảo trì hơn.', 'WebSinhVien'],
+      typescript: ['TypeScript', 'TypeScript giúp code rõ ràng hơn nhờ kiểu dữ liệu, đặc biệt trong WebSinhVien và SnapChef.', 'WebSinhVien · SnapChef'],
+      postgres: ['PostgreSQL', 'PostgreSQL phù hợp với WebSinhVien vì dữ liệu học phần, điểm số và vai trò người dùng có nhiều mối quan hệ.', 'WebSinhVien'],
+      mongo: ['MongoDB', 'MongoDB được dùng cho dữ liệu linh hoạt của HaiHand Marketplace, như bài đăng, người dùng và tin nhắn.', 'HaiHand Marketplace'],
+      supabase: ['Supabase', 'Supabase hỗ trợ lớp dữ liệu và dịch vụ cho SnapChef trong quá trình phát triển ứng dụng mobile.', 'SnapChef'],
+      git: ['Git', 'Git và GitHub là công cụ mình dùng để quản lý phiên bản, theo dõi thay đổi và chia sẻ mã nguồn dự án.', 'Tất cả dự án'],
+      php: ['PHP', 'PHP được dùng để xây dựng WebTiemTra, bao gồm quản lý thực đơn, đơn hàng và các chức năng cho quán trà sữa.', 'WebTiemTra'],
+      mysql: ['MySQL', 'MySQL lưu trữ dữ liệu món ăn, bàn, đơn hàng và nhân viên trong WebTiemTra.', 'WebTiemTra']
     };
     const title = document.querySelector('#tech-title');
     const detail = document.querySelector('#tech-detail');
+    const project = document.querySelector('#tech-project');
     document.querySelectorAll('.key-hotspot').forEach((key) => key.addEventListener('click', () => {
-      const [name, description] = technologies[key.dataset.tech];
+      const [name, description, projectName] = technologies[key.dataset.tech];
       document.querySelectorAll('.key-hotspot').forEach((item) => { item.classList.remove('active'); item.setAttribute('aria-pressed', 'false'); });
       key.classList.add('active');
       key.setAttribute('aria-pressed', 'true');
       title.textContent = name;
       detail.textContent = description;
+      project.textContent = projectName;
     }));
+    const playground = document.querySelector('.tech-playground');
+    playground.addEventListener('pointermove', (event) => {
+      const bounds = playground.getBoundingClientRect();
+      playground.style.setProperty('--tilt-x', `${((event.clientY - bounds.top) / bounds.height - .5) * -5}deg`);
+      playground.style.setProperty('--tilt-y', `${((event.clientX - bounds.left) / bounds.width - .5) * 5}deg`);
+    });
+    playground.addEventListener('pointerleave', () => { playground.style.setProperty('--tilt-x', '0deg'); playground.style.setProperty('--tilt-y', '0deg'); });
   </script>
 </body>
 </html>
