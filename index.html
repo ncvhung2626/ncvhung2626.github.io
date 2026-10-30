@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="vi">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Portfolio của Nguyễn Cao Vạn Hưng — Intern Software Engineering.">
+  <meta name="description" content="Portfolio of Nguyễn Cao Vạn Hưng — Software Engineering student.">
   <title>Nguyễn Cao Vạn Hưng — Portfolio</title>
   <style>
     :root {
@@ -56,10 +56,14 @@
     .button-primary:hover { color: #052c23; background: #42ebc0; }
 
     .content { overflow: hidden; }
-    .topbar { display: flex; justify-content: flex-end; padding: .45rem .65rem 0; }
+    .topbar { display: flex; align-items: flex-start; justify-content: flex-end; gap: .55rem; padding: .45rem .65rem 0; }
     .nav { display: flex; overflow-x: auto; border: 1px solid var(--line); border-radius: 0 0 0 14px; background: #25252c; }
     .nav a { padding: .85rem .95rem; color: var(--muted); font-size: .78rem; font-weight: 750; white-space: nowrap; }
     .nav a:hover { color: var(--accent); background: rgba(21, 216, 163, .06); }
+    .language-switcher { display: inline-flex; overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: #25252c; }
+    .language-switcher button { min-width: 39px; padding: .52rem .42rem; border: 0; color: var(--muted); background: transparent; cursor: pointer; font: inherit; font-size: .68rem; font-weight: 850; letter-spacing: .05em; }
+    .language-switcher button:hover, .language-switcher button:focus-visible { color: var(--accent); outline: 0; }
+    .language-switcher button.active { color: #062b22; background: var(--accent); }
     .page { padding: 2.3rem; }
     .section { scroll-margin-top: 1rem; padding: 1rem 0 4.2rem; }
     .section:last-child { padding-bottom: 0; }
@@ -137,97 +141,123 @@
     footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--line); color: #8d8d97; font-size: .78rem; }
 
     @media (max-width: 1050px) { .shell { grid-template-columns: 1fr; } .sidebar { position: relative; top: 0; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 1rem; text-align: left; } .avatar { width: 82px; height: 82px; margin: 0; } .sidebar h1 { font-size: 1.2rem; } .role { margin: .45rem 0 0; } .sidebar-divider, .contacts { display: none; } .sidebar-actions { display: flex; margin: 0; } }
-    @media (max-width: 720px) { .shell { width: min(100% - 1.2rem, var(--max)); margin: .6rem auto; gap: .65rem; } .card { border-radius: 16px; } .sidebar { grid-template-columns: auto 1fr; padding: 1rem; } .sidebar-actions { grid-column: 1 / -1; } .sidebar-actions .button { flex: 1; } .topbar { justify-content: flex-start; padding: 0; } .nav { width: 100%; border-radius: 16px 16px 0 0; } .page { padding: 1.55rem; } .section { padding-bottom: 3.4rem; } .service-grid, .resume-grid, .stack-showcase, .project-grid { grid-template-columns: 1fr; } .service-grid { gap: .7rem; } .cv-card { align-items: flex-start; flex-direction: column; } }
+    @media (max-width: 720px) { .shell { width: min(100% - 1.2rem, var(--max)); margin: .6rem auto; gap: .65rem; } .card { border-radius: 16px; } .sidebar { grid-template-columns: auto 1fr; padding: 1rem; } .sidebar-actions { grid-column: 1 / -1; } .sidebar-actions .button { flex: 1; } .topbar { justify-content: flex-start; padding: 0; } .nav { width: calc(100% - 94px); border-radius: 16px 16px 0 0; } .page { padding: 1.55rem; } .section { padding-bottom: 3.4rem; } .service-grid, .resume-grid, .stack-showcase, .project-grid { grid-template-columns: 1fr; } .service-grid { gap: .7rem; } .cv-card { align-items: flex-start; flex-direction: column; } }
     @media (max-width: 420px) { .page { padding: 1.2rem; } .nav a { padding: .75rem .7rem; font-size: .72rem; } .sidebar-actions { display: grid; } }
     @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }
   </style>
 </head>
 <body>
-  <a class="skip" href="#about">Đi đến nội dung chính</a>
+  <a class="skip" href="#about" data-i18n="skip">Skip to main content</a>
   <div class="shell">
     <aside class="sidebar card">
       <div class="avatar"><img src="assets/nguyen-hung.png" alt="Nguyễn Cao Vạn Hưng"></div>
-      <div><h1>Nguyễn Cao Vạn Hưng</h1><span class="role">Sinh viên Kỹ thuật phần mềm</span></div>
+      <div><h1>Nguyễn Cao Vạn Hưng</h1><span class="role" data-i18n="role">Software Engineering student</span></div>
       <div class="sidebar-divider"></div>
       <div class="contacts">
         <div class="contact-row"><span class="contact-icon">✉</span><div><span class="contact-label">Email</span><a class="contact-value" href="mailto:ncvhung2626@gmail.com">ncvhung2626@gmail.com</a></div></div>
         <div class="contact-row"><span class="contact-icon">⌘</span><div><span class="contact-label">GitHub</span><a class="contact-value" href="https://github.com/ncvhung2626" target="_blank" rel="noreferrer">github.com/ncvhung2626</a></div></div>
-        <div class="contact-row"><span class="contact-icon">⌖</span><div><span class="contact-label">Địa điểm</span><span class="contact-value">TP. Hồ Chí Minh, Việt Nam</span></div></div>
-        <div class="contact-row"><span class="contact-icon">▣</span><div><span class="contact-label">Học vấn</span><span class="contact-value">Vietnam Aviation Academy</span></div></div>
+        <div class="contact-row"><span class="contact-icon">⌖</span><div><span class="contact-label" data-i18n="locationLabel">Location</span><span class="contact-value" data-i18n="location">Ho Chi Minh City, Vietnam</span></div></div>
+        <div class="contact-row"><span class="contact-icon">▣</span><div><span class="contact-label" data-i18n="educationLabel">Education</span><span class="contact-value">Vietnam Aviation Academy</span></div></div>
       </div>
-      <div class="sidebar-actions"><a class="button button-primary" href="assets/nguyen-cao-van-hung-cv.pdf" target="_blank" rel="noreferrer">Xem CV PDF ↗</a><a class="button" href="mailto:ncvhung2626@gmail.com">Liên hệ</a></div>
+      <div class="sidebar-actions"><a class="button button-primary" href="assets/nguyen-cao-van-hung-cv.pdf" target="_blank" rel="noreferrer" data-i18n="viewCv">View CV PDF ↗</a><a class="button" href="mailto:ncvhung2626@gmail.com" data-i18n="contact">Contact</a></div>
     </aside>
 
     <main class="content card">
-      <div class="topbar"><nav class="nav" aria-label="Điều hướng portfolio"><a href="#about">Giới thiệu</a><a href="#resume">Kỹ năng</a><a href="#projects">Dự án</a><a href="#cv">CV</a><a href="#contact">Liên hệ</a></nav></div>
+      <div class="topbar"><nav class="nav" aria-label="Portfolio navigation"><a href="#about" data-i18n="aboutNav">About</a><a href="#resume" data-i18n="skillsNav">Skills</a><a href="#projects" data-i18n="projectsNav">Projects</a><a href="#cv">CV</a><a href="#contact" data-i18n="contact">Contact</a></nav><div class="language-switcher" aria-label="Language"><button type="button" data-language="en" class="active" aria-pressed="true">EN</button><button type="button" data-language="vi" aria-pressed="false">VI</button></div></div>
       <div class="page">
         <section class="section" id="about">
-          <h2 class="section-title">Về mình</h2>
-          <p class="about-copy">Chào bạn, mình là Nguyễn Cao Vạn Hưng — sinh viên năm cuối Software Engineering tại Vietnam Aviation Academy. Mình thích xây dựng sản phẩm web full-stack, nơi giao diện, API và dữ liệu cùng tạo nên một trải nghiệm dễ dùng.</p>
-          <p class="about-copy">Mình đặc biệt quan tâm đến những bài toán có tính ứng dụng: phân quyền theo vai trò, trao đổi dữ liệu realtime, quản lý cơ sở dữ liệu và các quy trình như điểm danh, thanh toán hay đặt món.</p>
+          <h2 class="section-title" data-i18n="aboutTitle">About me</h2>
+          <p class="about-copy" data-i18n="aboutFirst">Hi, I’m Nguyễn Cao Vạn Hưng — a final-year Software Engineering student at Vietnam Aviation Academy. I enjoy building full-stack web products where the interface, API, and data come together into a practical experience.</p>
+          <p class="about-copy" data-i18n="aboutSecond">I’m especially interested in applied problems: role-based access, real-time data exchange, database management, and workflows such as attendance, payments, and ordering.</p>
           <div class="service-grid">
-            <article class="service"><span class="service-icon">⌘</span><h3>Phát triển Backend</h3><p>Thiết kế REST API với Node.js, Express, NestJS, TypeScript và JWT.</p></article>
-            <article class="service"><span class="service-icon">◫</span><h3>Web Full-stack</h3><p>Xây dựng giao diện responsive bằng React, HTML, CSS và Bootstrap.</p></article>
-            <article class="service"><span class="service-icon">◌</span><h3>Dữ liệu &amp; Realtime</h3><p>Mô hình hóa dữ liệu với PostgreSQL/MongoDB và giao tiếp Socket.io.</p></article>
+            <article class="service"><span class="service-icon">⌘</span><h3 data-i18n="backendTitle">Backend development</h3><p data-i18n="backendText">Designing REST APIs with Node.js, Express, NestJS, TypeScript, and JWT.</p></article>
+            <article class="service"><span class="service-icon">◫</span><h3 data-i18n="fullstackTitle">Full-stack web</h3><p data-i18n="fullstackText">Building responsive interfaces with React, HTML, CSS, and Bootstrap.</p></article>
+            <article class="service"><span class="service-icon">◌</span><h3 data-i18n="dataTitle">Data &amp; real-time</h3><p data-i18n="dataText">Modeling data with PostgreSQL/MongoDB and using Socket.io for real-time communication.</p></article>
           </div>
         </section>
 
         <section class="section" id="resume">
-          <h2 class="section-title">Kỹ năng &amp; hành trình</h2>
+          <h2 class="section-title" data-i18n="skillsTitle">Skills &amp; journey</h2>
           <div class="resume-grid">
-            <div><h3 class="subheading"><span>▣</span>Học vấn</h3><div class="timeline"><article class="timeline-item"><h3>Kỹ thuật phần mềm</h3><time>2024 — nay</time><p>Vietnam Aviation Academy · Sinh viên năm cuối, theo đuổi hướng phát triển sản phẩm full-stack.</p></article></div></div>
-            <div><h3 class="subheading"><span>⌘</span>Kỹ năng chính</h3><div class="skill-list"><div class="skill"><b>BACKEND</b><span>Node.js, Express.js, NestJS, TypeScript, REST APIs, JWT.</span></div><div class="skill"><b>FRONTEND</b><span>React, React Native, JavaScript, HTML, CSS, Bootstrap, Tailwind CSS.</span></div><div class="skill"><b>DATA &amp; TOOLS</b><span>PostgreSQL, MongoDB, Supabase, TypeORM, Socket.io, Git/GitHub.</span></div></div></div>
+            <div><h3 class="subheading"><span>▣</span><span data-i18n="education">Education</span></h3><div class="timeline"><article class="timeline-item"><h3 data-i18n="degree">Software Engineering</h3><time data-i18n="studyPeriod">2024 — present</time><p data-i18n="studyText">Vietnam Aviation Academy · Final-year student focused on building full-stack products.</p></article></div></div>
+            <div><h3 class="subheading"><span>⌘</span><span data-i18n="coreSkills">Core skills</span></h3><div class="skill-list"><div class="skill"><b>BACKEND</b><span>Node.js, Express.js, NestJS, TypeScript, REST APIs, JWT.</span></div><div class="skill"><b>FRONTEND</b><span>React, React Native, JavaScript, HTML, CSS, Bootstrap, Tailwind CSS.</span></div><div class="skill"><b data-i18n="dataTools">DATA &amp; TOOLS</b><span>PostgreSQL, MongoDB, Supabase, TypeORM, Socket.io, Git/GitHub.</span></div></div></div>
           </div>
           <div class="stack-showcase">
-            <div class="tech-playground"><img class="keyboard-art" src="assets/interactive-tech-keyboard.png" alt="Bàn phím 3D với các phím công nghệ lập trình" loading="lazy"><p class="keyboard-hint">Chạm vào phím để khám phá</p><button class="key-hotspot hot-react active" type="button" data-tech="react" aria-label="React" aria-pressed="true"></button><button class="key-hotspot hot-node" type="button" data-tech="node" aria-label="Node.js" aria-pressed="false"></button><button class="key-hotspot hot-nest" type="button" data-tech="nest" aria-label="NestJS" aria-pressed="false"></button><button class="key-hotspot hot-supabase" type="button" data-tech="supabase" aria-label="Supabase" aria-pressed="false"></button><button class="key-hotspot hot-typescript" type="button" data-tech="typescript" aria-label="TypeScript" aria-pressed="false"></button><button class="key-hotspot hot-postgres" type="button" data-tech="postgres" aria-label="PostgreSQL" aria-pressed="false"></button><button class="key-hotspot hot-mongo" type="button" data-tech="mongo" aria-label="MongoDB" aria-pressed="false"></button><button class="key-hotspot hot-git" type="button" data-tech="git" aria-label="Git" aria-pressed="false"></button><button class="key-hotspot hot-php" type="button" data-tech="php" aria-label="PHP" aria-pressed="false"></button><button class="key-hotspot hot-mysql" type="button" data-tech="mysql" aria-label="MySQL" aria-pressed="false"></button></div>
-            <div class="stack-copy"><span>Tech playground</span><h3 id="tech-title">React</h3><p id="tech-detail" aria-live="polite">Mình dùng React để xây dựng giao diện web cho HaiHand Marketplace, từ trang khám phá sản phẩm đến các luồng thao tác của người dùng.</p><div class="tech-meta"><span id="tech-project">HaiHand Marketplace</span><span>Nhấn phím để khám phá</span></div></div>
+            <div class="tech-playground"><img class="keyboard-art" src="assets/interactive-tech-keyboard.png" alt="3D keyboard with programming technology keys" loading="lazy"><p class="keyboard-hint" data-i18n="keyboardHint">Select a key to explore</p><button class="key-hotspot hot-react active" type="button" data-tech="react" aria-label="React" aria-pressed="true"></button><button class="key-hotspot hot-node" type="button" data-tech="node" aria-label="Node.js" aria-pressed="false"></button><button class="key-hotspot hot-nest" type="button" data-tech="nest" aria-label="NestJS" aria-pressed="false"></button><button class="key-hotspot hot-supabase" type="button" data-tech="supabase" aria-label="Supabase" aria-pressed="false"></button><button class="key-hotspot hot-typescript" type="button" data-tech="typescript" aria-label="TypeScript" aria-pressed="false"></button><button class="key-hotspot hot-postgres" type="button" data-tech="postgres" aria-label="PostgreSQL" aria-pressed="false"></button><button class="key-hotspot hot-mongo" type="button" data-tech="mongo" aria-label="MongoDB" aria-pressed="false"></button><button class="key-hotspot hot-git" type="button" data-tech="git" aria-label="Git" aria-pressed="false"></button><button class="key-hotspot hot-php" type="button" data-tech="php" aria-label="PHP" aria-pressed="false"></button><button class="key-hotspot hot-mysql" type="button" data-tech="mysql" aria-label="MySQL" aria-pressed="false"></button></div>
+            <div class="stack-copy"><span data-i18n="playground">Tech playground</span><h3 id="tech-title">React</h3><p id="tech-detail" aria-live="polite">I use React to build web interfaces for HaiHand Marketplace, from product discovery to user workflows.</p><div class="tech-meta"><span id="tech-project">HaiHand Marketplace</span><span data-i18n="keyboardHint">Select a key to explore</span></div></div>
           </div>
-          <h3 class="language-heading">Ngôn ngữ</h3><div class="language-grid"><article class="language-card"><span class="language-code">EN</span><div><b>Tiếng Anh</b><span>Giao tiếp hằng ngày và công việc cơ bản</span></div></article><article class="language-card"><span class="language-code">JP</span><div><b>Tiếng Nhật</b><span>Cơ bản · từ vựng và hội thoại đơn giản</span></div></article></div>
+          <h3 class="language-heading" data-i18n="languages">Languages</h3><div class="language-grid"><article class="language-card"><span class="language-code">EN</span><div><b data-i18n="english">English</b><span data-i18n="englishLevel">Everyday and basic professional communication</span></div></article><article class="language-card"><span class="language-code">JP</span><div><b data-i18n="japanese">Japanese</b><span data-i18n="japaneseLevel">Basic vocabulary and simple conversation</span></div></article></div>
         </section>
 
         <section class="section" id="projects">
-          <h2 class="section-title">Dự án mình đã làm</h2>
-          <p class="about-copy">WebSinhVien là dự án cá nhân của mình. Ba dự án còn lại được thực hiện trong khuôn khổ bài tập lớn.</p>
+          <h2 class="section-title" data-i18n="projectsTitle">Selected projects</h2>
+          <p class="about-copy" data-i18n="projectsIntro">WebSinhVien is my personal project. The other three projects were completed as major coursework.</p>
           <div class="project-grid">
-            <article class="project"><span class="project-type">E-commerce platform</span><span class="project-status">Bài tập lớn</span><h3>HaiHand Marketplace</h3><p>Marketplace có đăng bài, tìm kiếm, yêu thích, đơn hàng, quản trị nội dung và nhắn tin realtime giữa người mua và người bán.</p><div class="chips"><span>React</span><span>Express</span><span>MongoDB</span><span>Socket.io</span></div><a class="project-link" href="https://github.com/ncvhung2626/HaiHand-Marketplace" target="_blank" rel="noreferrer">Xem mã nguồn ↗</a></article>
-            <article class="project"><span class="project-type">Education platform</span><span class="project-status">Dự án cá nhân</span><h3>WebSinhVien</h3><p>Hệ thống quản lý sinh viên với đăng ký học phần, điểm danh QR, bài tập, điểm số, thanh toán và dashboard theo vai trò.</p><div class="chips"><span>NestJS</span><span>TypeScript</span><span>PostgreSQL</span><span>TypeORM</span></div><a class="project-link" href="https://github.com/ncvhung2626/WebSinhVien" target="_blank" rel="noreferrer">Xem mã nguồn ↗</a></article>
-            <article class="project"><span class="project-type">Mobile community app</span><span class="project-status">Bài tập lớn</span><h3>SnapChef</h3><p>Ứng dụng cộng đồng ẩm thực trên mobile, nơi người dùng có thể chia sẻ công thức, bài đăng, Reels, nhóm và kết nối với những người cùng sở thích nấu ăn.</p><div class="chips"><span>Expo</span><span>React Native</span><span>TypeScript</span><span>Supabase</span></div><a class="project-link" href="https://github.com/ncvhung2626/snapchef" target="_blank" rel="noreferrer">Xem mã nguồn ↗</a></article>
-            <article class="project"><span class="project-type">Tea shop management</span><span class="project-status">Bài tập lớn</span><h3>WebTiemTra</h3><p>Hệ thống quản lý quán trà sữa với thực đơn, giỏ hàng, đơn hàng, nhân viên và mã QR cho từng bàn để hỗ trợ quy trình phục vụ.</p><div class="chips"><span>PHP</span><span>MySQL</span><span>QR Code</span><span>HTML/CSS</span></div><a class="project-link" href="https://github.com/ncvhung2626/WebTiemTra" target="_blank" rel="noreferrer">Xem mã nguồn ↗</a></article>
+            <article class="project"><span class="project-type" data-i18n="ecommerce">E-commerce platform</span><span class="project-status" data-i18n="coursework">Major coursework</span><h3>HaiHand Marketplace</h3><p data-i18n="haihandText">A marketplace with listings, search, favorites, orders, content management, and real-time messaging between buyers and sellers.</p><div class="chips"><span>React</span><span>Express</span><span>MongoDB</span><span>Socket.io</span></div><a class="project-link" href="https://github.com/ncvhung2626/HaiHand-Marketplace" target="_blank" rel="noreferrer" data-i18n="viewSource">View source ↗</a></article>
+            <article class="project"><span class="project-type" data-i18n="educationPlatform">Education platform</span><span class="project-status" data-i18n="personalProject">Personal project</span><h3>WebSinhVien</h3><p data-i18n="studentText">A student management system with course registration, QR attendance, assignments, grades, payments, and role-based dashboards.</p><div class="chips"><span>NestJS</span><span>TypeScript</span><span>PostgreSQL</span><span>TypeORM</span></div><a class="project-link" href="https://github.com/ncvhung2626/WebSinhVien" target="_blank" rel="noreferrer" data-i18n="viewSource">View source ↗</a></article>
+            <article class="project"><span class="project-type" data-i18n="mobileCommunity">Mobile community app</span><span class="project-status" data-i18n="coursework">Major coursework</span><h3>SnapChef</h3><p data-i18n="snapchefText">A mobile food community where people share recipes, posts, Reels, groups, and connect with others who enjoy cooking.</p><div class="chips"><span>Expo</span><span>React Native</span><span>TypeScript</span><span>Supabase</span></div><a class="project-link" href="https://github.com/ncvhung2626/snapchef" target="_blank" rel="noreferrer" data-i18n="viewSource">View source ↗</a></article>
+            <article class="project"><span class="project-type" data-i18n="teaShop">Tea shop management</span><span class="project-status" data-i18n="coursework">Major coursework</span><h3>WebTiemTra</h3><p data-i18n="teaShopText">A milk tea shop management system with a menu, cart, orders, staff, and QR codes for individual tables.</p><div class="chips"><span>PHP</span><span>MySQL</span><span>QR Code</span><span>HTML/CSS</span></div><a class="project-link" href="https://github.com/ncvhung2626/WebTiemTra" target="_blank" rel="noreferrer" data-i18n="viewSource">View source ↗</a></article>
           </div>
         </section>
 
-        <section class="section" id="cv"><div class="cv-card"><div><h3>CV của mình</h3><p>Xem chi tiết kinh nghiệm dự án, kỹ năng, học vấn và thông tin liên hệ trong CV tiếng Anh.</p></div><a class="button button-primary" href="assets/nguyen-cao-van-hung-cv.pdf" target="_blank" rel="noreferrer">Mở CV PDF ↗</a></div></section>
+        <section class="section" id="cv"><div class="cv-card"><div><h3 data-i18n="cvTitle">My CV</h3><p data-i18n="cvText">Find project experience, skills, education, and contact details in my English CV.</p></div><a class="button button-primary" href="assets/nguyen-cao-van-hung-cv.pdf" target="_blank" rel="noreferrer" data-i18n="openCv">Open CV PDF ↗</a></div></section>
 
-        <section class="section" id="contact"><h2 class="section-title">Liên hệ với mình</h2><div class="contact-box"><p>Nếu bạn muốn trao đổi về cơ hội thực tập, một dự án web hoặc chỉ đơn giản là chia sẻ ý tưởng, hãy gửi mình một email nhé.</p><a class="email" href="mailto:ncvhung2626@gmail.com">ncvhung2626@gmail.com</a><div class="buttons"><a class="button button-primary" href="mailto:ncvhung2626@gmail.com">Gửi email ↗</a><a class="button" href="assets/nguyen-cao-van-hung-cv.pdf" download>Tải CV ↓</a></div></div></section>
-        <footer>© 2026 Nguyễn Cao Vạn Hưng · Built with care.</footer>
+        <section class="section" id="contact"><h2 class="section-title" data-i18n="contactTitle">Get in touch</h2><div class="contact-box"><p data-i18n="contactText">If you would like to discuss an internship opportunity, a web project, or simply share an idea, please send me an email.</p><a class="email" href="mailto:ncvhung2626@gmail.com">ncvhung2626@gmail.com</a><div class="buttons"><a class="button button-primary" href="mailto:ncvhung2626@gmail.com" data-i18n="sendEmail">Send email ↗</a><a class="button" href="assets/nguyen-cao-van-hung-cv.pdf" download data-i18n="downloadCv">Download CV ↓</a></div></div></section>
+        <footer data-i18n="footer">© 2026 Nguyễn Cao Vạn Hưng · Built with care.</footer>
       </div>
     </main>
   </div>
   <script>
+    const englishText = Object.fromEntries([...document.querySelectorAll('[data-i18n]')].map((element) => [element.dataset.i18n, element.textContent]));
+    const vietnameseText = {
+      skip: 'Đi đến nội dung chính', role: 'Sinh viên Kỹ thuật phần mềm', locationLabel: 'Địa điểm', location: 'TP. Hồ Chí Minh, Việt Nam', educationLabel: 'Học vấn', viewCv: 'Xem CV PDF ↗', contact: 'Liên hệ', aboutNav: 'Giới thiệu', skillsNav: 'Kỹ năng', projectsNav: 'Dự án',
+      aboutTitle: 'Về mình', aboutFirst: 'Chào bạn, mình là Nguyễn Cao Vạn Hưng — sinh viên năm cuối Software Engineering tại Vietnam Aviation Academy. Mình thích xây dựng sản phẩm web full-stack, nơi giao diện, API và dữ liệu cùng tạo nên một trải nghiệm dễ dùng.', aboutSecond: 'Mình đặc biệt quan tâm đến những bài toán có tính ứng dụng: phân quyền theo vai trò, trao đổi dữ liệu realtime, quản lý cơ sở dữ liệu và các quy trình như điểm danh, thanh toán hay đặt món.',
+      backendTitle: 'Phát triển Backend', backendText: 'Thiết kế REST API với Node.js, Express, NestJS, TypeScript và JWT.', fullstackTitle: 'Web Full-stack', fullstackText: 'Xây dựng giao diện responsive bằng React, HTML, CSS và Bootstrap.', dataTitle: 'Dữ liệu & Realtime', dataText: 'Mô hình hóa dữ liệu với PostgreSQL/MongoDB và giao tiếp Socket.io.',
+      skillsTitle: 'Kỹ năng & hành trình', education: 'Học vấn', degree: 'Kỹ thuật phần mềm', studyPeriod: '2024 — nay', studyText: 'Vietnam Aviation Academy · Sinh viên năm cuối, theo đuổi hướng phát triển sản phẩm full-stack.', coreSkills: 'Kỹ năng chính', dataTools: 'DỮ LIỆU & CÔNG CỤ',
+      keyboardHint: 'Chạm vào phím để khám phá', playground: 'Không gian công nghệ', languages: 'Ngôn ngữ', english: 'Tiếng Anh', englishLevel: 'Giao tiếp hằng ngày và công việc cơ bản', japanese: 'Tiếng Nhật', japaneseLevel: 'Cơ bản · từ vựng và hội thoại đơn giản',
+      projectsTitle: 'Dự án mình đã làm', projectsIntro: 'WebSinhVien là dự án cá nhân của mình. Ba dự án còn lại được thực hiện trong khuôn khổ bài tập lớn.', ecommerce: 'Nền tảng thương mại điện tử', coursework: 'Bài tập lớn', haihandText: 'Marketplace có đăng bài, tìm kiếm, yêu thích, đơn hàng, quản trị nội dung và nhắn tin realtime giữa người mua và người bán.', viewSource: 'Xem mã nguồn ↗', educationPlatform: 'Nền tảng giáo dục', personalProject: 'Dự án cá nhân', studentText: 'Hệ thống quản lý sinh viên với đăng ký học phần, điểm danh QR, bài tập, điểm số, thanh toán và dashboard theo vai trò.', mobileCommunity: 'Ứng dụng cộng đồng mobile', snapchefText: 'Ứng dụng cộng đồng ẩm thực trên mobile, nơi người dùng có thể chia sẻ công thức, bài đăng, Reels, nhóm và kết nối với những người cùng sở thích nấu ăn.', teaShop: 'Quản lý quán trà sữa', teaShopText: 'Hệ thống quản lý quán trà sữa với thực đơn, giỏ hàng, đơn hàng, nhân viên và mã QR cho từng bàn để hỗ trợ quy trình phục vụ.',
+      cvTitle: 'CV của mình', cvText: 'Xem chi tiết kinh nghiệm dự án, kỹ năng, học vấn và thông tin liên hệ trong CV tiếng Anh.', openCv: 'Mở CV PDF ↗', contactTitle: 'Liên hệ với mình', contactText: 'Nếu bạn muốn trao đổi về cơ hội thực tập, một dự án web hoặc chỉ đơn giản là chia sẻ ý tưởng, hãy gửi mình một email nhé.', sendEmail: 'Gửi email ↗', downloadCv: 'Tải CV ↓', footer: '© 2026 Nguyễn Cao Vạn Hưng · Được xây dựng với sự chỉn chu.'
+    };
     const technologies = {
-      react: ['React', 'Mình dùng React để xây dựng giao diện web cho HaiHand Marketplace, từ trang khám phá sản phẩm đến các luồng thao tác của người dùng.', 'HaiHand Marketplace'],
-      node: ['Node.js', 'Node.js giúp mình xây dựng API và xử lý các nghiệp vụ phía server cho những dự án full-stack.', 'HaiHand Marketplace · SnapChef'],
-      nest: ['NestJS', 'NestJS được dùng trong WebSinhVien để tổ chức backend theo module, dễ mở rộng và dễ bảo trì hơn.', 'WebSinhVien'],
-      typescript: ['TypeScript', 'TypeScript giúp code rõ ràng hơn nhờ kiểu dữ liệu, đặc biệt trong WebSinhVien và SnapChef.', 'WebSinhVien · SnapChef'],
-      postgres: ['PostgreSQL', 'PostgreSQL phù hợp với WebSinhVien vì dữ liệu học phần, điểm số và vai trò người dùng có nhiều mối quan hệ.', 'WebSinhVien'],
-      mongo: ['MongoDB', 'MongoDB được dùng cho dữ liệu linh hoạt của HaiHand Marketplace, như bài đăng, người dùng và tin nhắn.', 'HaiHand Marketplace'],
-      supabase: ['Supabase', 'Supabase hỗ trợ lớp dữ liệu và dịch vụ cho SnapChef trong quá trình phát triển ứng dụng mobile.', 'SnapChef'],
-      git: ['Git', 'Git và GitHub là công cụ mình dùng để quản lý phiên bản, theo dõi thay đổi và chia sẻ mã nguồn dự án.', 'Tất cả dự án'],
-      php: ['PHP', 'PHP được dùng để xây dựng WebTiemTra, bao gồm quản lý thực đơn, đơn hàng và các chức năng cho quán trà sữa.', 'WebTiemTra'],
-      mysql: ['MySQL', 'MySQL lưu trữ dữ liệu món ăn, bàn, đơn hàng và nhân viên trong WebTiemTra.', 'WebTiemTra']
+      react: { en: ['React', 'I use React to build web interfaces for HaiHand Marketplace, from product discovery to user workflows.', 'HaiHand Marketplace'], vi: ['React', 'Mình dùng React để xây dựng giao diện web cho HaiHand Marketplace, từ trang khám phá sản phẩm đến các luồng thao tác của người dùng.', 'HaiHand Marketplace'] },
+      node: { en: ['Node.js', 'Node.js helps me build APIs and handle server-side logic for full-stack projects.', 'HaiHand Marketplace · SnapChef'], vi: ['Node.js', 'Node.js giúp mình xây dựng API và xử lý các nghiệp vụ phía server cho những dự án full-stack.', 'HaiHand Marketplace · SnapChef'] },
+      nest: { en: ['NestJS', 'I use NestJS in WebSinhVien to organize the backend into maintainable, scalable modules.', 'WebSinhVien'], vi: ['NestJS', 'NestJS được dùng trong WebSinhVien để tổ chức backend theo module, dễ mở rộng và dễ bảo trì hơn.', 'WebSinhVien'] },
+      typescript: { en: ['TypeScript', 'TypeScript makes code clearer with type safety, especially in WebSinhVien and SnapChef.', 'WebSinhVien · SnapChef'], vi: ['TypeScript', 'TypeScript giúp code rõ ràng hơn nhờ kiểu dữ liệu, đặc biệt trong WebSinhVien và SnapChef.', 'WebSinhVien · SnapChef'] },
+      postgres: { en: ['PostgreSQL', 'PostgreSQL fits WebSinhVien because courses, grades, and user roles have many relationships.', 'WebSinhVien'], vi: ['PostgreSQL', 'PostgreSQL phù hợp với WebSinhVien vì dữ liệu học phần, điểm số và vai trò người dùng có nhiều mối quan hệ.', 'WebSinhVien'] },
+      mongo: { en: ['MongoDB', 'MongoDB supports flexible marketplace data such as listings, users, and messages.', 'HaiHand Marketplace'], vi: ['MongoDB', 'MongoDB được dùng cho dữ liệu linh hoạt của HaiHand Marketplace, như bài đăng, người dùng và tin nhắn.', 'HaiHand Marketplace'] },
+      supabase: { en: ['Supabase', 'Supabase provides the data and service layer for SnapChef during mobile development.', 'SnapChef'], vi: ['Supabase', 'Supabase hỗ trợ lớp dữ liệu và dịch vụ cho SnapChef trong quá trình phát triển ứng dụng mobile.', 'SnapChef'] },
+      git: { en: ['Git', 'I use Git and GitHub to manage versions, track changes, and share project source code.', 'All projects'], vi: ['Git', 'Git và GitHub là công cụ mình dùng để quản lý phiên bản, theo dõi thay đổi và chia sẻ mã nguồn dự án.', 'Tất cả dự án'] },
+      php: { en: ['PHP', 'PHP powers WebTiemTra, including menu, order, and tea shop management features.', 'WebTiemTra'], vi: ['PHP', 'PHP được dùng để xây dựng WebTiemTra, bao gồm quản lý thực đơn, đơn hàng và các chức năng cho quán trà sữa.', 'WebTiemTra'] },
+      mysql: { en: ['MySQL', 'MySQL stores menu items, tables, orders, and staff data in WebTiemTra.', 'WebTiemTra'], vi: ['MySQL', 'MySQL lưu trữ dữ liệu món ăn, bàn, đơn hàng và nhân viên trong WebTiemTra.', 'WebTiemTra'] }
     };
     const title = document.querySelector('#tech-title');
     const detail = document.querySelector('#tech-detail');
     const project = document.querySelector('#tech-project');
-    document.querySelectorAll('.key-hotspot').forEach((key) => key.addEventListener('click', () => {
-      const [name, description, projectName] = technologies[key.dataset.tech];
-      document.querySelectorAll('.key-hotspot').forEach((item) => { item.classList.remove('active'); item.setAttribute('aria-pressed', 'false'); });
-      key.classList.add('active');
-      key.setAttribute('aria-pressed', 'true');
+    let language = localStorage.getItem('portfolio-language') === 'vi' ? 'vi' : 'en';
+    let activeTechnology = 'react';
+    const updateTechnology = () => {
+      const [name, description, projectName] = technologies[activeTechnology][language];
       title.textContent = name;
       detail.textContent = description;
       project.textContent = projectName;
+    };
+    const applyLanguage = () => {
+      const copy = language === 'vi' ? vietnameseText : englishText;
+      document.documentElement.lang = language;
+      document.title = language === 'vi' ? 'Nguyễn Cao Vạn Hưng — Portfolio' : 'Nguyễn Cao Vạn Hưng — Portfolio';
+      document.querySelector('meta[name="description"]').content = language === 'vi' ? 'Portfolio của Nguyễn Cao Vạn Hưng — Sinh viên Kỹ thuật phần mềm.' : 'Portfolio of Nguyễn Cao Vạn Hưng — Software Engineering student.';
+      document.querySelectorAll('[data-i18n]').forEach((element) => { element.textContent = copy[element.dataset.i18n]; });
+      document.querySelectorAll('[data-language]').forEach((button) => { const selected = button.dataset.language === language; button.classList.toggle('active', selected); button.setAttribute('aria-pressed', String(selected)); });
+      updateTechnology();
+    };
+    document.querySelectorAll('.key-hotspot').forEach((key) => key.addEventListener('click', () => {
+      activeTechnology = key.dataset.tech;
+      document.querySelectorAll('.key-hotspot').forEach((item) => { item.classList.remove('active'); item.setAttribute('aria-pressed', 'false'); });
+      key.classList.add('active');
+      key.setAttribute('aria-pressed', 'true');
+      updateTechnology();
     }));
+    document.querySelectorAll('[data-language]').forEach((button) => button.addEventListener('click', () => { language = button.dataset.language; localStorage.setItem('portfolio-language', language); applyLanguage(); }));
     const playground = document.querySelector('.tech-playground');
     playground.addEventListener('pointermove', (event) => {
       const bounds = playground.getBoundingClientRect();
@@ -235,6 +265,7 @@
       playground.style.setProperty('--tilt-y', `${((event.clientX - bounds.left) / bounds.width - .5) * 5}deg`);
     });
     playground.addEventListener('pointerleave', () => { playground.style.setProperty('--tilt-x', '0deg'); playground.style.setProperty('--tilt-y', '0deg'); });
+    applyLanguage();
   </script>
 </body>
 </html>
